@@ -16,8 +16,9 @@ for inst in instructions:
         case "don't()":
             enabled = False
         case _:
-            x, y = map(int, inst[4:-1].split(','))
-            print(x, y)
-            part2 += x*y
+            if enabled:
+                x, y = map(int, inst[4:-1].split(','))
+                print(x, y)
+                part2 += x*y
 
 print(part2)
